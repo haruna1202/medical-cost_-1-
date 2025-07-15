@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# Load mô hình đã lưu
-model = joblib.load('catboost_model.pkl')
+# Load mô hình đã lưu (đúng tên file pkl)
+model = joblib.load('Model (99).pkl')
 
 # Tiêu đề ứng dụng
 st.title("Dự đoán chi phí y tế cá nhân")
