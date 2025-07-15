@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán chi phí y tế</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+    <div class="max-w-xl mx-auto p-8 bg-white shadow-md rounded mt-10">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Dự đoán chi phí y tế</h1>
+        <form method="post" action="/predict" class="space-y-4">
+            <div>
+                <label class="block text-gray-700">Tuổi:</label>
+                <input type="number" name="age" class="w-full px-4 py-2 border rounded" required>
+            </div>
+            <div>
+                <label class="block text-gray-700">Giới tính:</label>
+                <select name="sex" class="w-full px-4 py-2 border rounded">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-700">BMI:</label>
+                <input type="number" step="0.1" name="bmi" class="w-full px-4 py-2 border rounded" required>
+            </div>
+            <div>
+                <label class="block text-gray-700">Số con:</label>
+                <input type="number" name="children" class="w-full px-4 py-2 border rounded" required>
+            </div>
+            <div>
+                <label class="block text-gray-700">Hút thuốc:</label>
+                <select name="smoker" class="w-full px-4 py-2 border rounded">
+                    <option value="yes">Có</option>
+                    <option value="no">Không</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-700">Khu vực:</label>
+                <select name="region" class="w-full px-4 py-2 border rounded">
+                    <option value="southeast">Southeast</option>
+                    <option value="southwest">Southwest</option>
+                    <option value="northeast">Northeast</option>
+                    <option value="northwest">Northwest</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Dự đoán</button>
+        </form>
+
+        {% if result is not none %}
+        <h2 class="mt-6 text-xl font-semibold text-gray-700">Kết quả dự đoán: {{ result }} USD</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
