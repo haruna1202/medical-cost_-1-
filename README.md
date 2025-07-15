@@ -39,7 +39,7 @@ Bộ dữ liệu dùng để huấn luyện mô hình dự đoán chi phí y t�
 **Học máy:** scikit-learn (LinearRegression)  
 **Triển khai web:** FastAPI + Jinja2 Templates  
 **Lưu mô hình:** joblib  
-**Môi trường phát triển:** VS Code / Jupyter Notebook
+**Môi trường phát triển:** Google Colab (huấn luyện mô hình), VS Code (triển khai FastAPI)
 
 ---
 
